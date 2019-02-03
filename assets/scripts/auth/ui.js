@@ -17,10 +17,12 @@ const onSignUpFailure = () => {
 const onSignInSuccess = (responseData) => {
   onAuthMessage('Successfully Signed In')
   store.user = responseData.user
-  $('#change-password').show()
-  $('#sign-out-section').show()
-  $('#sign-up').hide()
-  $('#sign-in').hide()
+  $('.view-public').hide()
+  $('.view-private').show()
+  // $('#change-password').show()
+  // $('#sign-out-section').show()
+  // $('#sign-up').hide()
+  // $('#sign-in').hide()
 }
 
 const onSignInFailure = () => {
@@ -38,10 +40,8 @@ const onChangePasswordFailure = () => {
 const onSignOutSuccess = () => {
   onAuthMessage('Successfully Signed Out')
   store.user = null
-  $('#change-password').hide()
-  $('#sign-out-section').hide()
-  $('#sign-up').show()
-  $('#sign-in').show()
+  $('.view-public').show()
+  $('.view-private').hide()
 }
 
 const onSignOutFailure = () => {
