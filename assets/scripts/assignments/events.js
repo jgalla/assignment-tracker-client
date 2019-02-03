@@ -4,6 +4,13 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
+const onGetAssignments = event => {
+  event.preventDefault()
+  api.getAssignments()
+    .then(ui.onGetAssignmentsSuccess)
+    .catch(ui.onGetAssignmentsFailure)
+}
+
 const onNewAssignment = event => {
   event.preventDefault()
   const formData = getFormFields(event.target)
@@ -16,6 +23,7 @@ const onNewAssignment = event => {
 
 const addHandlers = () => {
   $('#new-assignment').on('submit', onNewAssignment)
+  $('#get-all-assignments').on('click', onGetAssignments)
 }
 
 module.exports = {

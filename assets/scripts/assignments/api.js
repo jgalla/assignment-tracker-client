@@ -3,6 +3,16 @@
 const config = require('../config')
 const store = require('../store')
 
+const getAssignments = () => {
+  return $.ajax({
+    url: config.apiUrl + '/assignments',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const newAssignment = (formData) => {
   return $.ajax({
     url: config.apiUrl + '/assignments',
@@ -15,5 +25,6 @@ const newAssignment = (formData) => {
 }
 
 module.exports = {
+  getAssignments,
   newAssignment
 }

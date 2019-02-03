@@ -1,0 +1,13 @@
+{{#each assignments as |assignment|}}
+  {{log assignment}}
+
+  <section data-id="{{assignment.id}}">
+    <div>
+      <h1> <small>Name: {{limit assignment.assignment_name 10}}</small></h1>
+      <h1> <small>Link: {{limit assignment.link 10}}</small></h1>
+      <h1> <small>Due Date: {{limit assignment.due_date 10}}</small></h1>
+      <h1> <small>Status: {{limit assignment.status 10}}</small></h1>
+    </div>
+  </section>
+
+{{/each}}
