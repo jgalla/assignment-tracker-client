@@ -14,20 +14,24 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+
+      <!-- Navbar  -->
       <nav class="navbar fixed-top navbar-dark bg-dark">
         <a class="navbar-brand">Assignment Tracker</a>
         <form class="form-inline view-public" id="sign-in">
           <input class="form-control mr-sm-2" name="credentials[email]" type="text" placeholder="email">
           <input class="form-control mr-sm-2" name="credentials[password]" type="password" placeholder="password">
-          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Log In</button>
+          <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Log In</button>
         </form>
         <form class="form-inline view-private" id="change-password">
           <input class="form-control mr-sm-2" name="passwords[old]" type="password" placeholder="old password">
           <input class="form-control mr-sm-2" name="passwords[new]" type="password" placeholder="new password">
-          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Change Password</button>
+          <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Change Password</button>
         </form>
-        <button class="btn btn-outline-secondary my-2 my-sm-0 view-private" type="submit">Log Out</button>
+        <button class="btn btn-outline-info my-2 my-sm-0 view-private" id="sign-out" type="submit">Log Out</button>
       </nav>
+
+      <!-- Sign-up -->
       <form class="view-public" id="sign-up">
         <h4>Sign Up</h4>
         <input name="credentials[email]" type="text" placeholder="email">
@@ -35,18 +39,51 @@
         <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
         <button type="submit">Sign Up</button>
       </form>
-      <form class="view-private" id="new-assignment">
+
+      <!-- <form id="new-assignment">
         <h4>New Assignment</h4>
         <input name="assignment[assignment_name]" type="text" placeholder="assignment name">
         <input name="assignment[link]" type="text" placeholder="link">
         <input name="assignment[due_date]" type="date" placeholder="due date">
         <input name="assignment[status]" type="text" placeholder="status">
         <button type="submit">Submit</button>
-      </form>
+      </form> -->
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-dark view-private" data-toggle="modal" data-target="#exampleModalCenter">
+        New Assignment
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">New Assignment</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="new-assignment">
+                <input class="form-control" name="assignment[assignment_name]" type="text" placeholder="assignment name">
+                <input class="form-control" name="assignment[link]" type="text" placeholder="link">
+                <input class="form-control" name="assignment[due_date]" type="date" placeholder="due date">
+                <input class="form-control" name="assignment[status]" type="text" placeholder="status">
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" form="new-assignment" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div id="auth-message"></div>
       <div id="assignment-message"></div>
       <hr>
-      <button type="button" id="get-all-assignments">Get All Assignments</button>
+      <button type="button" class="btn btn-dark view-private" id="get-all-assignments">Get All Assignments</button>
       <hr>
       <table class="table view-private">
         <thead class="thead-dark">
@@ -59,17 +96,7 @@
           </tr>
         </thead>
         <tbody class="content">
-          <!-- <tr>
-            <th scope="row">1</th>
-            <td>name</td>
-            <td>link</td>
-            <td>due date</td>
-            <td>status</td>
-          </tr> -->
         </tbody>
       </table>
-      <hr>
-
-      <!-- <div class="content"></div> -->
     </body>
 </html>
