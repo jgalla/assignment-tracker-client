@@ -4,6 +4,7 @@ const store = require('../store')
 
 const onAuthMessage = (message) => {
   $('#auth-message').text(message)
+  $('#assignment-message').text('')
 }
 
 const onSignUpSuccess = () => {

@@ -5,6 +5,7 @@ const showAssignmentsTemplate = require('../templates/assignment-listing.handleb
 
 const onAssignmentMessage = (message) => {
   $('#assignment-message').text(message)
+  $('#auth-message').text('')
 }
 
 const onGetAssignmentsSuccess = (data) => {

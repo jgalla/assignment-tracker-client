@@ -17,7 +17,7 @@
 
       <!-- Navbar  -->
       <nav class="navbar fixed-top navbar-dark bg-dark">
-        <a class="navbar-brand">Assignment Tracker</a>
+        <a class="navbar-brand text-light">Assignment Tracker</a>
         <form class="form-inline view-public" id="sign-in">
           <input class="form-control mr-sm-2" name="credentials[email]" type="text" placeholder="email">
           <input class="form-control mr-sm-2" name="credentials[password]" type="password" placeholder="password">
@@ -31,14 +31,22 @@
         <button class="btn btn-outline-info my-2 my-sm-0 view-private" id="sign-out" type="submit">Log Out</button>
       </nav>
 
+      <!-- User messages  -->
+      <div id="auth-message"></div>
+      <div id="assignment-message"></div>
+
       <!-- Sign-up -->
-      <form class="view-public" id="sign-up">
-        <h4>Sign Up</h4>
-        <input name="credentials[email]" type="text" placeholder="email">
-        <input name="credentials[password]" type="password" placeholder="password">
-        <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
-        <button type="submit">Sign Up</button>
-      </form>
+      <div class="card view-public">
+        <div class="card-body">
+          <h4>Sign Up</h4>
+          <form class="form-inline" id="sign-up">
+            <input class="form-control" name="credentials[email]" type="text" placeholder="email">
+            <input class="form-control" name="credentials[password]" type="password" placeholder="password">
+            <input class="form-control" name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+            <button class="btn btn-dark" type="submit">Sign Up</button>
+          </form>
+        </div>
+      </div>
 
       <!-- Button trigger new assignment modal -->
       <button type="button" class="btn btn-dark view-private" data-toggle="modal" data-target="#newAssignmentModal">
@@ -110,6 +118,8 @@
           </div>
         </div>
       </div>
+      <!-- Get All Assignments -->
+      <button type="button" class="btn btn-dark view-private" id="get-all-assignments">Get All Assignments</button>
 
       <!-- Delete Assignment -->
       <form class="view-private" id="delete-assignment">
@@ -118,11 +128,7 @@
         <button type="submit">Submit</button>
       </form>
 
-      <div id="auth-message"></div>
-      <div id="assignment-message"></div>
-      <hr>
-      <button type="button" class="btn btn-dark view-private" id="get-all-assignments">Get All Assignments</button>
-      <hr>
+      <!-- Assignment table -->
       <table class="table view-private">
         <thead class="thead-dark">
           <tr>
