@@ -26,9 +26,18 @@ const onNewAssignmentFailure = () => {
   onAssignmentMessage('Error Creating New Assignment')
 }
 
+const onUpdateAssignmentSuccess = () => {
+  onAssignmentMessage('Successfully Updated Assignment')
+}
+
+const onUpdateAssignmentFailure = () => {
+  onAssignmentMessage('Error Updating Assignment')
+}
 module.exports = {
   onGetAssignmentsSuccess,
   onGetAssignmentsFailure,
   onNewAssignmentSuccess,
-  onNewAssignmentFailure
+  onNewAssignmentFailure,
+  onUpdateAssignmentSuccess,
+  onUpdateAssignmentFailure
 }

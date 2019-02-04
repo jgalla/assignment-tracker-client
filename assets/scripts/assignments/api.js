@@ -24,7 +24,19 @@ const newAssignment = (formData) => {
   })
 }
 
+const updateAssignment = function (id, formData) {
+  return $.ajax({
+    url: config.apiUrl + '/assignments/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 module.exports = {
   getAssignments,
-  newAssignment
+  newAssignment,
+  updateAssignment
 }

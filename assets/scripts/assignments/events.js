@@ -21,9 +21,21 @@ const onNewAssignment = event => {
   $('form').trigger('reset')
 }
 
+const onUpdateAssignment = event => {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+  const id = formData.assignment.id
+
+  api.updateAssignment(id, formData)
+    .then(ui.onUpdateAssignmentSuccess)
+    .catch(ui.onUpdateAssignmentFailure)
+  $('form').trigger('reset')
+}
+
 const addHandlers = () => {
   $('#new-assignment').on('submit', onNewAssignment)
   $('#get-all-assignments').on('click', onGetAssignments)
+  $('#update-assignment').on('submit', onUpdateAssignment)
 }
 
 module.exports = {
