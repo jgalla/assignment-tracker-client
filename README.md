@@ -56,3 +56,10 @@ scope.
 * Testing
   - Component testing and end-to-end user testing
 * Styling
+
+### Unsolved Problems and Furure Work
+* Use handlebars to generate inline assignment delete button and inline status change
+* Change new assignment to not require link and validate link format if provided
+* Sort assignments and add button to show only open or only closed
+* Allow for multiple assignment tables for organization
+* Assignment ID number should start over for each user
