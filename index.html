@@ -66,10 +66,14 @@
             </div>
             <div class="modal-body">
               <form id="new-assignment">
-                <input class="form-control" name="assignment[assignment_name]" type="text" placeholder="assignment name">
-                <input class="form-control" name="assignment[link]" type="text" placeholder="link">
-                <input class="form-control" name="assignment[due_date]" type="date" placeholder="due date">
-                <input class="form-control" name="assignment[status]" type="text" placeholder="status">
+                <input class="form-control" name="assignment[assignment_name]" type="text" placeholder="assignment name" required>
+                <input class="form-control" name="assignment[link]" type="text" placeholder="link" required>
+                <input class="form-control" name="assignment[due_date]" type="date" placeholder="due date" required>
+                <!-- <input class="form-control" name="assignment[status]" type="text" placeholder="status"> -->
+                <select class="custom-select" name="assignment[status]">
+                  <option selected>Open</option>
+                  <option value="Closed">Closed</option>
+                </select>
               </form>
             </div>
             <div class="modal-footer">

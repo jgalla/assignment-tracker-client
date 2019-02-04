@@ -8,7 +8,7 @@ const onAssignmentMessage = (message) => {
 }
 
 const onGetAssignmentsSuccess = (data) => {
-  console.log(data)
+  $('.content').empty()
   onAssignmentMessage('Success Retrieving Assignments')
   const showAssignmentsHtml = showAssignmentsTemplate({ assignments: data.assignments })
   $('.content').html(showAssignmentsHtml)
