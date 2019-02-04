@@ -68,7 +68,6 @@
                 <input class="form-control" name="assignment[assignment_name]" type="text" placeholder="assignment name" required>
                 <input class="form-control" name="assignment[link]" type="text" placeholder="link" required>
                 <input class="form-control" name="assignment[due_date]" type="date" placeholder="due date" required>
-                <!-- <input class="form-control" name="assignment[status]" type="text" placeholder="status"> -->
                 <select class="custom-select" name="assignment[status]">
                   <option selected>Open</option>
                   <option value="Closed">Closed</option>
@@ -104,7 +103,6 @@
                 <input class="form-control" name="assignment[assignment_name]" type="text" placeholder="assignment name">
                 <input class="form-control" name="assignment[link]" type="text" placeholder="link">
                 <input class="form-control" name="assignment[due_date]" type="date" placeholder="due date">
-                <!-- <input class="form-control" name="assignment[status]" type="text" placeholder="status"> -->
                 <select class="custom-select" name="assignment[status]">
                   <option selected>Open</option>
                   <option value="Closed">Closed</option>
@@ -118,15 +116,44 @@
           </div>
         </div>
       </div>
+
       <!-- Get All Assignments -->
       <button type="button" class="btn btn-dark view-private" id="get-all-assignments">Get All Assignments</button>
 
+      <!-- Button trigger delete assignment modal -->
+      <button type="button" class="btn btn-dark view-private" data-toggle="modal" data-target="#deleteAssignmentModal">
+        Delete Assignment
+      </button>
+
+      <!-- Delete Assignment Modal -->
+      <div class="modal fade" id="deleteAssignmentModal" tabindex="-1" role="dialog" aria-labelledby="deleteAssignmentModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteAssignmentModalTitle">Delete Assignment</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="delete-assignment">
+                <input class="form-control" name="assignment[id]" type="text" placeholder="assignment id" required>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" form="delete-assignment" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Delete Assignment -->
-      <form class="view-private" id="delete-assignment">
+      <!-- <form class="view-private" id="delete-assignment">
         <h4>Delete Assignment</h4>
         <input name="assignment[id]" type="text" placeholder="assignment id" required>
         <button type="submit">Submit</button>
-      </form>
+      </form> -->
 
       <!-- Assignment table -->
       <table class="table view-private">
