@@ -19,10 +19,7 @@ const onSignInSuccess = (responseData) => {
   store.user = responseData.user
   $('.view-public').hide()
   $('.view-private').show()
-  // $('#change-password').show()
-  // $('#sign-out-section').show()
-  // $('#sign-up').hide()
-  // $('#sign-in').hide()
+  $('.content').empty()
 }
 
 const onSignInFailure = () => {
@@ -42,6 +39,7 @@ const onSignOutSuccess = () => {
   store.user = null
   $('.view-public').show()
   $('.view-private').hide()
+  $('.content').empty()
 }
 
 const onSignOutFailure = () => {
