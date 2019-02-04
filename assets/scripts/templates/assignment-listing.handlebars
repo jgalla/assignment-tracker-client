@@ -2,7 +2,7 @@
   <tr>
     <th scope="row">{{assignment.id}}</th>
     <td>{{limit assignment.assignment_name 50}}</td>
-    <td>{{limit assignment.link 150}}</td>
+    <td><a href="{{assignment.link}}" target="_blank">{{limit assignment.link 50}}</a></td>
     <td>{{limit assignment.due_date 15}}</td>
     <td>{{limit assignment.status 10}}</td>
   </tr>
