@@ -35,8 +35,19 @@ const updateAssignment = function (id, formData) {
   })
 }
 
+const deleteAssignment = id => {
+  return $.ajax({
+    url: config.apiUrl + '/assignments/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   getAssignments,
   newAssignment,
-  updateAssignment
+  updateAssignment,
+  deleteAssignment
 }

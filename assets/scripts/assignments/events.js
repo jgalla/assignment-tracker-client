@@ -32,10 +32,23 @@ const onUpdateAssignment = event => {
   $('form').trigger('reset')
 }
 
+const onDeleteAssignment = event => {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+  const id = formData.assignment.id
+
+  api.deleteAssignment(id)
+    .then(ui.onDeleteAssignmentSuccess)
+    .catch(ui.onDeleteAssignmentFailure)
+  $('form').trigger('reset')
+}
+
 const addHandlers = () => {
   $('#new-assignment').on('submit', onNewAssignment)
   $('#get-all-assignments').on('click', onGetAssignments)
   $('#update-assignment').on('submit', onUpdateAssignment)
+  $('#delete-assignment').on('submit', onDeleteAssignment)
+
 }
 
 module.exports = {

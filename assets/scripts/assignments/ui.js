@@ -33,11 +33,22 @@ const onUpdateAssignmentSuccess = () => {
 const onUpdateAssignmentFailure = () => {
   onAssignmentMessage('Error Updating Assignment')
 }
+
+const onDeleteAssignmentSuccess = () => {
+  onAssignmentMessage('Successfully Deleted Assignment')
+}
+
+const onDeleteAssignmentFailure = () => {
+  onAssignmentMessage('Error Deleting Assignment')
+}
+
 module.exports = {
   onGetAssignmentsSuccess,
   onGetAssignmentsFailure,
   onNewAssignmentSuccess,
   onNewAssignmentFailure,
   onUpdateAssignmentSuccess,
-  onUpdateAssignmentFailure
+  onUpdateAssignmentFailure,
+  onDeleteAssignmentSuccess,
+  onDeleteAssignmentFailure
 }
